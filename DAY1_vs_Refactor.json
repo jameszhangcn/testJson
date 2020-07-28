@@ -1,0 +1,454 @@
+{
+    "gnb_vs_config.json": {
+        "gnbvs": {
+            "gnbCuUpConfig": [
+                {
+                    "id": "1",
+                    "gNBCUCPId": "1",
+                    "intfmgr_vs_config": {
+                        "gnbCuUpNamePre": 1,
+                        "gnbCuUpName": "UP-0",
+                        "cnSupported": "EPC",
+                        "localSctpEndpoint": {
+                            "localIp": [
+                                "172.31.22.53"
+                            ],
+                            "localPort": 38462
+                        },
+                        "upE1SetupMaxRetryNum": 2,
+                        "AssoEstabTimerExpiry": 15,
+                        "upE1SetupTimerExpiry": 20,
+                        "gnbCuUpCapacityPre": 0,
+                        "gnbCuUpCapacity": 0
+                    },
+                    "vpp": {
+                        "unix": {
+                            "nodaemon": false,
+                            "log": "/var/log/vpp/vpp.log",
+                            "full-coredump": true,
+                            "cli-listen": "/run/vpp/cli.sock",
+                            "interactive": true
+                        },
+                        "api-trace": {
+                            "on": true
+                        },
+                        "socksvr": {
+                            "default": true
+                        },
+                        "cpu": [
+                            {
+                                "name": "0",
+                                "main-core": 1,
+                                "corelist-workers": "2"
+                            }
+                        ],
+                        "buffers": {
+                            "buffers-per-numa": 131072
+                        },
+                        "dpdk": {
+                            "dev-default": {
+                                "num-rx-queues": 4,
+                                "num-tx-queues": 4
+                            },
+                            "dev": [
+                                {
+                                    "name": "eth1",
+                                    "pci": "0000:00:09.0"
+                                },
+                                {
+                                    "name": "eth2",
+                                    "pci": "0000:00:0a.0"
+                                },
+                                {
+                                    "name": "eth3",
+                                    "pci": "0000:00:0b.0"
+                                }
+                            ],
+                            "uio-driver": "vfio-pci",
+                            "vdev": "crypto_aesni_mb"
+                        },
+                        "plugins": {
+                            "path": "/usr/local/mnvpp-pkg/lib/vpp_plugins"
+                        },
+                        "tap-inject": {
+                            "disable": true
+                        },
+                        "custom": [
+                            {
+                                "name": "0",
+                                "vppctl": "set cu-up-ip-bypass enable"
+                            }
+                        ],
+                        "ip": [
+                            {
+                                "name": "eth1",
+                                "ip": "172.16.34.150/24"
+                            },
+                            {
+                                "name": "eth2",
+                                "ip": "172.16.35.150/24"
+                            },
+                            {
+                                "name": "eth3",
+                                "ip": "172.16.36.150/24"
+                            }
+                        ]
+                    },
+                    "dpcm_scale": {
+                        "dpsScale": {
+                            "serviceName": "dpsAutoScale",
+                            "scaleInTimer": 600,
+                            "maxBunchOfReleaseReq": 100
+                        },
+                        "pdcpconfig_up": {
+                            "name": 0,
+                            "enable_nr_up": false
+                        }
+                    },
+                    "logs": {
+                        "globalSetting": {
+                            "level": "Inf"
+                        },
+                        "modules": [
+                            {
+                                "name": "MAIN",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "VPP",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "BCCCLIENT",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "DPRM_CLIENT",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "GW_CLIENT",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "IWF_CLIENT",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "INTFMGR_CLIENT",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "DPRM_SVC",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "GW_SVC",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "INTFMGR_SVC",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "IWF-SERVER",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CUUPCONFIG",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CBCONFIG",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "IWFCONFIG",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "HTTPCLIENT",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CIMAdapter",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CIMNats",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CONFIGMONITOR",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CONFIGMONITORV2",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "DB_MANAGER",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "FMAAS",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "StateNotify",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "APPHTTPSERVER",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "LogCom",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "NFREGISTER",
+                                "enabled": true,
+                                "callStackDepth": 1
+                            },
+                            {
+                                "name": "POD",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "SYSTEM",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "TMaas",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "DALClient",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "DAL_SVC",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "TimerClient",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "/TIMER.TIMER/TIMER",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "/DAL.DAL/DAL",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "DMUX",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "enet",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "sctp",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "HTTPServer",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "ID_Generator",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "PMQ",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CGI",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "dmr",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "FSM",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "DISP",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "RWTREE",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "PTAL",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "RLV",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "SP",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "SRGP",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CB",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "ETCD",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CONFIGMONITOR",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "etcd_sample",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "SQLCREATOR",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "svector",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "vector",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "Timer",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "Transmitter",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "UDSC",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "Util",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "CIRQ",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "REGT",
+                                "enabled": true,
+                                "callStackDepth": 1
+                            },
+                            {
+                                "name": "AUTHSERVER",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "QCLIENT",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "REGCLIENT",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "AUTH",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "QUERY",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            },
+                            {
+                                "name": "REGISTER",
+                                "enabled": true,
+                                "callStackDepth": 2
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

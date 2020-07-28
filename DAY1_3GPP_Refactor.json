@@ -1,0 +1,128 @@
+{
+    "mavenir_data_container.json": {
+        "data": [
+            {
+                "id": "1",
+                "ManagedElement": [
+                    {
+                        "id": "1",
+                        "attributes": {
+                            "priorityLabel": 1
+                        },
+                        "GNBCUUPFunction": [
+                            {
+                                "id": "1",
+                                "attributes": {
+                                    "userLabel": "DISH1",
+                                    "resourceType": "DRB",
+                                    "rRMPolicyMemberList": [
+                                        {
+                                            "idx": 1,
+                                            "mcc": "405",
+                                            "mnc": "05",
+                                            "sNSSAI": 2
+                                        }
+                                    ],
+                                    "gNBCUUPId": "1",
+                                    "gNBId": "1",
+                                    "gNBIdLength": 22,
+                                    "pLMNInfoList": [
+                                        {
+                                            "mcc": "405",
+                                            "mnc": "05",
+                                            "sNSSAI": 2
+                                        }
+                                    ]
+                                },
+                                "EP_E1": [
+                                    {
+                                        "id": "0",
+                                        "attributes": {
+                                            "localAddress": [
+                                                {
+                                                    "ipAddress": "172.31.22.53",
+                                                    "vlanId": 1
+                                                }
+                                            ],
+                                            "remoteAddress": "172.31.22.52"
+                                        }
+                                    }
+                                ],
+                                "EP_F1U": [
+                                    {
+                                        "id": "0",
+                                        "attributes": {
+                                            "localAddress": [
+                                                {
+                                                    "ipAddress": "172.31.21.52",
+                                                    "vlanId": 1
+                                                }
+                                            ],
+                                            "remoteAddress": "172.31.21.54"
+                                        }
+                                    }
+                                ],
+                                "EP_NgU": [
+                                    {
+                                        "id": "0",
+                                        "attributes": {
+                                            "localAddress": [
+                                                {
+                                                    "ipAddress": "172.31.3.52",
+                                                    "vlanId": 1
+                                                }
+                                            ],
+                                            "remoteAddress": "1.1.1.1"
+                                        }
+                                    }
+                                ],
+                                "EP_XnU": [
+                                    {
+                                        "id": "0",
+                                        "attributes": {
+                                            "localAddress": [
+                                                {
+                                                    "ipAddress": "1.1.1.1",
+                                                    "vlanId": 1
+                                                }
+                                            ],
+                                            "remoteAddress": "1.1.1.1"
+                                        }
+                                    }
+                                ],
+                                "EP_X2U": [
+                                    {
+                                        "id": "0",
+                                        "attributes": {
+                                            "localAddress": [
+                                                {
+                                                    "ipAddress": "1.1.1.1",
+                                                    "vlanId": 1
+                                                }
+                                            ],
+                                            "remoteAddress": "1.1.1.1"
+                                        }
+                                    }
+                                ],
+                                "EP_S1U": [
+                                    {
+                                        "id": "0",
+                                        "attributes": {
+                                            "localAddress": [
+                                                {
+                                                    "ipAddress": "168.168.31.202",
+                                                    "vlanId": 1
+                                                }
+                                            ],
+                                            "remoteAddress": "1.1.1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
